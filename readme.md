@@ -12,7 +12,7 @@
 生成一个随机字符串
 
 # randomArray
-生成一个最近数组
+生成一个随机数组
 
 # randomChineseChar
 生成一个随机汉字
