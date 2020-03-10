@@ -1,0 +1,15 @@
+{
+  "name": "random-data-service",
+  "version": "1.0.1",
+  "author": "cendechen",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^3.5.2"
+  }
+}
