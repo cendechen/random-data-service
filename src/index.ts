@@ -15,8 +15,8 @@ const genLenByTemplate = (len: number, generate: IGenerate) => {
  */
 export const randomInt = (start: number, end?: number) => {
   if (!end) {
-    start = 0
     end = start
+    start = 0
   }
   return start + floor((end - start) * random())
 }
@@ -59,3 +59,16 @@ export const randomChineseChar = () => {
  * @param len 指定长度
  */
 export const randomChineseStr = (len: number) => genLenByTemplate(len, randomChineseChar)
+
+/**
+ * 方法整合
+*/
+const $ = {
+  int: randomInt,
+  char: randomChar,
+  str: randomStr,
+  chChar: randomChineseChar,
+  chStr: randomChineseStr,
+  array: randomArray
+}
+export default $
