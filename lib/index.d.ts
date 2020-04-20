@@ -30,3 +30,15 @@ export declare const randomChineseChar: () => string;
  * @param len 指定长度
  */
 export declare const randomChineseStr: (len: number) => string;
+/**
+ * 方法整合
+*/
+declare const $: {
+    int: (start: number, end?: number) => number;
+    char: () => string;
+    str: (len: number) => string;
+    chChar: () => string;
+    chStr: (len: number) => string;
+    array: (len: number, generate: IGenerate) => string[];
+};
+export default $;

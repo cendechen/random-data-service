@@ -5,11 +5,9 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "dev": "",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "test": "mocha --reporter spec --require ts-node/register test/*.ts",
-    "lib": ""
+    "test": "mocha --reporter spec --require ts-node/register test/*.ts"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
