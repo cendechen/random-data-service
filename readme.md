@@ -5,7 +5,7 @@
 # 快速开始
   ```
     // 安装
-
+    npm install '@cendechen/rand-data'
     // 测试
     npm run test
   ```
