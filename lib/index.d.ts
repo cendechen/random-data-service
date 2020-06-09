@@ -20,7 +20,7 @@ export declare const randomStr: (len: number) => string;
  * @param len  长度
  * @param template 模板函数
  */
-export declare const randomArray: (len: number, generate: IGenerate) => string[];
+export declare const randomArray: (len: number, generate: IGenerate) => any[];
 /**
  * 生成一个随机中文字符
  */
@@ -39,6 +39,6 @@ declare const $: {
     str: (len: number) => string;
     chChar: () => string;
     chStr: (len: number) => string;
-    array: (len: number, generate: IGenerate) => string[];
+    array: (len: number, generate: IGenerate) => any[];
 };
 export default $;
