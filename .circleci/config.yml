@@ -1,0 +1,20 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  build:
+    docker:
+      - image: circleci/node:3.0.0
+    steps:
+      - checkout
+      - run: echo "开始安装依赖信息"
+      - run: npm install
+      - run: echo "开始测试信息"
+      - run: npm run test
+      - run: echo "开始打包"
+      - run: npm run build
+      - run: echo "打包成功"
+workflows:
+  node-tests:
+    jobs:
+      - build
