@@ -1,3 +1,3 @@
-export type IGenerate = {
-  (data: any, index: number): any
+export type IGenerate<T> = {
+  (data: T, index: number): T
 }

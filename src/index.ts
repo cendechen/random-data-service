@@ -3,9 +3,18 @@ const random = Math.random
 const floor = Math.floor
 const round = Math.round
 
-
-const genLenByTemplate = (len: number, generate: IGenerate) => {
-  return new Array(len).fill('').map(generate).join('')
+/**
+ * 生成固定长度的文本
+ * @param len
+ * @param generate
+ */
+function genLenByTemplate<T> (len: number, generate: IGenerate<T>):T {
+  let i = 0
+  let results:T
+  for(; i < len; i++) {
+    results = generate(results, i)
+  }
+  return results
 }
 
 /**
@@ -13,7 +22,7 @@ const genLenByTemplate = (len: number, generate: IGenerate) => {
  * @param start  开始
  * @param end 结束
  */
-export const randomInt = (start: number, end?: number) => {
+export const randomInt = (start: number, end?: number):number => {
   if (!end) {
     end = start
     start = 0
@@ -25,7 +34,7 @@ export const randomInt = (start: number, end?: number) => {
  * 生成一个 a-Z A-Z 的区间的随机字符
  * @returns char
  */
-export const randomChar = () => {
+export const randomChar = (): string => {
   const start = 65
   const end = 90
 
@@ -45,7 +54,7 @@ export const randomStr = (len: number) => {
  * @param len  长度
  * @param template 模板函数
  */
-export const randomArray = (len: number, generate: IGenerate) => {
+export function randomArray<T> (len: number, generate: IGenerate<T>): Array<T> {
   return new Array(len).fill('').map(generate)
 }
 /**
@@ -58,7 +67,12 @@ export const randomChineseChar = () => {
  * 生成一个指定长度的汉字
  * @param len 指定长度
  */
-export const randomChineseStr = (len: number) => genLenByTemplate(len, randomChineseChar)
+export const randomChineseStr = (len: number) => {
+  let out = genLenByTemplate(len, (results: string, index: number) => {
+    return randomChineseChar()
+  })
+  return out
+}
 
 /**
  * 方法整合
